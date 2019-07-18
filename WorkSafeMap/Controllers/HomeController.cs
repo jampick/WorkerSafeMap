@@ -31,7 +31,7 @@ namespace WorkSafeMap.Controllers
         }
         public ActionResult Map(string searchBox)
         {
-            
+      
             ViewBag.Message = searchBox;
             string BINGMAPS_KEY = ConfigurationManager.AppSettings["BINGMAPS_KEY"];
             ViewBag.BingMapsKey = BINGMAPS_KEY;
