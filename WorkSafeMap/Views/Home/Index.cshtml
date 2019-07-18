@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    
+    
+
+
+}
+
+<!--<div style="background-image: url('../../Content/falling_ladder.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">-->
+
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<script type='text/javascript'>
+    //thank you - https://docs.microsoft.com/en-us/bingmaps/v8-web-control/map-control-concepts/autosuggest-module-examples/default-autosuggest-user-interface-example
+    var map;
+
+    function GetMap() {
+        map = new Microsoft.Maps.Map('#myMap', {});
+
+        Microsoft.Maps.loadModule('Microsoft.Maps.AutoSuggest', function () {
+            var manager = new Microsoft.Maps.AutosuggestManager({ map: map });
+            manager.attachAutosuggest('#searchBox', '#searchBoxContainer', selectedSuggestion);
+        });
+    }
+
+    function selectedSuggestion(result) {
+        //Remove previously selected suggestions from the map.
+        map.entities.clear();
+
+        //Show the suggestion as a pushpin and center map over it.
+        var pin = new Microsoft.Maps.Pushpin(result.location);
+        map.entities.push(pin);
+        map.setView({ bounds: result.bestView });
+    }
+</script>
+<script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=@ViewBag.BingMapsKey' async defer></script>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            HELLO: @ViewBag.BingMapsKey
+        </div>
+        <div class="col-sm-3">
+            <img src="~/Content/falling_ladder.jpg" alt="worker falling off ladder" class="img-responsive" />
+        </div>
+    </div>
+
+    <div class="row">
+        <form action='@Url.Action("Map", "Home")' method="post">
+            <div class="col center-block" id="searchBoxContainer">
+                <input type="text" class="form-control center-block" id="searchBox" name="searchBox" placeholder="Did a worker get hurt at..." />
+                <div id="myMap" style="position:relative;width:0px;height:0px;" class="center-block"></div>
+            </div>
+
+            <div class="col">
+                <button type="submit" id="SearchFormSubmit" class="btn btn-primary center-block">Search</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
