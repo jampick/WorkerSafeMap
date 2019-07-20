@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "populateDB", "populateDB\populateDB.csproj", "{A32675D4-8079-446B-9D94-155EB4521CB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerSafeMap", "WorkerSafeMap2\WorkerSafeMap.csproj", "{EF32C63C-E425-423A-B565-73BEAA5CB1C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerSafeMap", "WorkerSafeMap\WorkerSafeMap.csproj", "{EF32C63C-E425-423A-B565-73BEAA5CB1C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerSafeMap2.Tests", "WorkerSafeMap2.Tests\WorkerSafeMap2.Tests.csproj", "{073A272E-372A-4067-8F47-C429ADDD4C1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerSafeMap.Tests", "WorkerSafeMap.Tests\WorkerSafeMap.Tests.csproj", "{073A272E-372A-4067-8F47-C429ADDD4C1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

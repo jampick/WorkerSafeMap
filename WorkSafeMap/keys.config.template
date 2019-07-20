@@ -1,7 +1,0 @@
-<!--rename this file to keys.config and enter your key information below-->
-<?xml version="1.0" encoding="utf-8"?>
-<appSettings>
-  <add key="StorageConnectionString" value="" />
-  <add key="BINGMAPS_KEY" value="YOUR KEY HERE" />
-  
-</appSettings> 
