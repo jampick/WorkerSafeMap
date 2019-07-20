@@ -28,6 +28,7 @@
         var pin = new Microsoft.Maps.Pushpin(result.location);
         map.entities.push(pin);
         map.setView({ bounds: result.bestView });
+        
     }
 </script>
 <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=@ViewBag.BingMapsKey' async defer></script>

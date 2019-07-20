@@ -11,6 +11,8 @@ using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
 using Microsoft.WindowsAzure.Storage.Table; // Namespace for Table storage types
 using System.Data;
 using WorkSafeMap.Controllers.shared;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace WorkSafeMap.Controllers
 {
@@ -18,7 +20,8 @@ namespace WorkSafeMap.Controllers
     public class HomeController : Controller
     {
         private IncidentEntity.IncidentEntityDBContext db = new IncidentEntity.IncidentEntityDBContext();
-        
+      
+
         public ActionResult Index()
         {
             string BINGMAPS_KEY = ConfigurationManager.AppSettings["BINGMAPS_KEY"];
@@ -48,15 +51,22 @@ namespace WorkSafeMap.Controllers
             string searchURL = "http://dev.virtualearth.net/REST/v1/Locations/{locationQuery}?includeNeighborhood={includeNeighborhood}&maxResults={maxResults}&include={includeValue}&key=" + BINGMAPS_KEY;
 
             CloudTable table = DataAccess.GetDataTable("incidents");
+            //TableQuery<IncidentEntity> query = new TableQuery<IncidentEntity>();
 
-            TableQuery<IncidentEntity> query = new TableQuery<IncidentEntity>();
+            TableQuery<IncidentEntity> query = new TableQuery<IncidentEntity>().Where(
+                TableQuery.CombineFilters(
+                    TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "injury"),
+                    TableOperators.And,
+                    TableQuery.GenerateFilterCondition("State", QueryComparisons.Equal, "WASHINGTON")));
 
             var items = table.ExecuteQuery(query).ToList();
-            //db.IncidentEntities.
-            //db.SaveChanges();
-
             return View(items);
+
         }
+    
+
+
 
     }
+
 }

@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "populateDB", "populateDB\po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerSafeMap", "WorkerSafeMap\WorkerSafeMap.csproj", "{EF32C63C-E425-423A-B565-73BEAA5CB1C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerSafeMap.Tests", "WorkerSafeMap.Tests\WorkerSafeMap.Tests.csproj", "{073A272E-372A-4067-8F47-C429ADDD4C1D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{EF32C63C-E425-423A-B565-73BEAA5CB1C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF32C63C-E425-423A-B565-73BEAA5CB1C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF32C63C-E425-423A-B565-73BEAA5CB1C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{073A272E-372A-4067-8F47-C429ADDD4C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{073A272E-372A-4067-8F47-C429ADDD4C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{073A272E-372A-4067-8F47-C429ADDD4C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{073A272E-372A-4067-8F47-C429ADDD4C1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
